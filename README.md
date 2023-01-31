@@ -9,7 +9,7 @@ Nuget Package:
 
 # How to start
 
-```
+```csharp
 using D8nObjectDetection;
 
 DocumentClient client = new DocumentClient("YOUR-API-KEY");
@@ -35,7 +35,7 @@ If you pass 1-st image to RunAnalysis(), you can get the second and third images
 
 Here's how:
  
-```
+```csharp
 var symbolImage = await client.GetSymbols(result);
 symbolImage.Save("./data.png");
  
