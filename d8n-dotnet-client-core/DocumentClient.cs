@@ -16,18 +16,6 @@ public enum Type
     Text
 }
 
-public enum Status
-{
-    _None = 1,
-    Started = 2,
-    Symbol_Detection = 4,
-    Line_Detection = 8,
-    Text_Extraction = 16,
-    Rejected = 32,
-    Failed = 64,
-    Completed = 128
-}
-
 /// <summary>
 /// Represents an object identified in the drawing.
 /// </summary>
@@ -140,7 +128,7 @@ public class DocumentClient
     }
 
 
-      /// <summary>
+    /// <summary>
     /// Fetch symbol results for a request id
     /// </summary>
     /// <param name="id">The processing ID to use</param>
@@ -213,7 +201,9 @@ public class DocumentClient
     }
 
     /// <summary>
-    /// Fetch status for a request id
+    /// Use this to determine if a request is ready.
+    /// Fetches status for a request id. Returns a string in the form Status.Started|Status.Symbol_Extraction etc. etc.
+    /// Once a request is ready the status bcomes Status.Completed.
     /// </summary>
     /// <param name="id">The processing ID to use</param>
     /// <returns>Status of the request</returns>
@@ -221,7 +211,7 @@ public class DocumentClient
     /// <exception cref="KeyNotFoundException">Couldn't find this request</exception>
     /// <exception cref="UnauthorizedAccessException">Check your API key</exception>
     /// <exception cref="Exception">Something went wrong with the service</exception>
-    public async Task<Status> GetStatus(string id)
+    public async Task<string> GetStatus(string id)
     {
         var client = new RestClient($"https://d8n.xyz/api/get_status?id={id}");
         var request = new RestRequest();
@@ -235,7 +225,7 @@ public class DocumentClient
             var content = response.Content;
             if (content == null) throw new NullReferenceException("Something went wrong fetching results for analysis");
             dynamic result = JsonConvert.DeserializeObject(content);
-            return Enum.Parse<Status>(result["status"]);
+            return result["status"];
         }
         if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
         {
