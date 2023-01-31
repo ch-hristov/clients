@@ -12,6 +12,7 @@
     <PackageReference Include="d8n-object-detection-core" Version="0.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
   </ItemGroup>
   
   <ItemGroup>

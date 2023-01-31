@@ -1,8 +1,15 @@
 ﻿using D8nObjectDetection;
+using SixLabors.ImageSharp;
 
-DocumentClient client = new DocumentClient("YOUR-API-KEY");
+string api_key = Environment.GetEnvironmentVariable("d8n_api_key");
+
+DocumentClient client = new DocumentClient(api_key);
 var result = await client.RunAnalysis("./test.jpg");
 
 await Task.Delay(3000);
 var objects = await client.GetCompleted(result);
+
 System.Console.WriteLine(objects.Count());
+
+var symbolImage = await client.GetSymbols(result);
+symbolImage.Save("./data.png");
