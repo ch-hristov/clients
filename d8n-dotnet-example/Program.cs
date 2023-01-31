@@ -8,8 +8,10 @@ var result = await client.RunAnalysis("./test.jpg");
 
 var status = await client.GetStatus(result);
 System.Console.WriteLine(status);
-
 await Task.Delay(5000);
+status = await client.GetStatus(result);
+System.Console.WriteLine(status);
+
 var objects = await client.GetCompleted(result);
 
 System.Console.WriteLine(objects.Count());
