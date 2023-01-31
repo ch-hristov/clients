@@ -38,7 +38,7 @@ Object now contains extracted info. For the full properties of what we can extra
 var symbolImage = await client.GetSymbols(result);
 symbolImage.Save("./data.png");
  
- var lineImage = await client.GetSymbols(result);
- symbolImage.Save("./line.png");
+var lineImage = await client.GetSymbols(result);
+symbolImage.Save("./line.png");
  
 ```
