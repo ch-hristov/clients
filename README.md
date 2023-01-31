@@ -43,3 +43,6 @@ var lineImage = await client.GetLines(result);
 symbolImage.Save("./line.png");
 ```
 Note: `result` is the id variable returned from RunAnalysis()
+
+# Limits
+ Image size: 10MB
