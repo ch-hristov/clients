@@ -100,7 +100,7 @@ public class DocumentClient
         {
             throw new UnauthorizedAccessException("An error occurred. Check your API keys and the ID of the request.");
         }
-        throw new Exception("We couldn't fetch the data for you");
+        throw new Exception($"We couldn't fetch the data for you : {response.StatusCode} {response.Content}");
     }
 
     /// <summary>
@@ -115,6 +115,43 @@ public class DocumentClient
     public async Task<Image> GetSymbols(string id)
     {
         var client = new RestClient($"https://d8n.xyz/api/get_symbols?id={id}");
+        var request = new RestRequest();
+
+        request.AddHeader("API-KEY", this._apiKey);
+        request.Method = Method.Get;
+        var response = await client.ExecuteAsync(request);
+        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            var content = response.Content;
+            if (content == null) throw new NullReferenceException("Something went wrong fetching results for analysis");
+
+            var image = Image.Load(response.RawBytes);
+            return image;
+        }
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            throw new KeyNotFoundException();
+        }
+        if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            throw new UnauthorizedAccessException("An error occurred. Check your API keys and the ID of the request.");
+        }
+        throw new Exception("We couldn't fetch the data for you");
+    }
+
+
+      /// <summary>
+    /// Fetch symbol results for a request id
+    /// </summary>
+    /// <param name="id">The processing ID to use</param>
+    /// <returns>An list of line drawing object identified for the added id</returns>
+    /// <exception cref="KeyNotFoundException">Couldn't find data for this ID</exception>
+    /// <exception cref="NullReferenceException">The response was empty or wasn't as expected. The service might be down. Check status</exception>
+    /// <exception cref="UnauthorizedAccessException">Check your API key</exception>
+    /// <exception cref="Exception">Something went wrong.</exception>
+    public async Task<Image> GetLines(string id)
+    {
+        var client = new RestClient($"https://d8n.xyz/api/get_lines?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);

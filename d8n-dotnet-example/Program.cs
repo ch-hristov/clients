@@ -12,4 +12,8 @@ var objects = await client.GetCompleted(result);
 System.Console.WriteLine(objects.Count());
 
 var symbolImage = await client.GetSymbols(result);
-symbolImage.Save("./data.png");
+symbolImage.Save("./result.png");
+
+var lineImage = await client.GetLines(result);
+System.Console.WriteLine(lineImage);
+lineImage.Save("./line.png");

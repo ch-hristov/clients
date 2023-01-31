@@ -14,9 +14,9 @@
     <PackageReference Include="RestSharp" Version="108.0.3" />
     <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
   </ItemGroup>
-  
-  <ItemGroup>
+
+  <!-- <ItemGroup>
     <ProjectReference Include="..\d8n-dotnet-client-core\d8n-dotnet-client.csproj" />
-  </ItemGroup>
+  </ItemGroup> -->
   
 </Project>
