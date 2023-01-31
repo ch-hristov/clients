@@ -28,6 +28,8 @@ Object now contains extracted info. For the full properties of what we can extra
 <div style="display:flex; flex-direction:row;">
 <img src="./d8n-dotnet-example/test.jpg" width=200 height=200/>
 <img src="./d8n-dotnet-example/result.png" width=200 height=200/>
+<img src="./d8n-dotnet-example/line.png" width=200 height=200/>
+
 </>
 
 ```
