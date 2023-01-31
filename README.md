@@ -5,7 +5,7 @@ Docs: https://documenter.getpostman.com/view/989374/2s935hS7qK
 Nuget Package:
 [![NuGet version (d8n-object-detection-core)](https://img.shields.io/nuget/v/d8n-object-detection-core.svg?style=flat-square)](https://www.nuget.org/packages/d8n-object-detection-core/)
 
-Run engineering drawing analysis:
+# Basics
 
 ```
 using D8nObjectDetection;
@@ -23,4 +23,14 @@ var objects = await client.GetCompleted(result);
 Object now contains extracted info. For the full properties of what we can extract see this:
  https://github.com/ch-hristov/d8n-dotnet-clients/blob/b11294a0fc588b00be9b20baef886e9de530faf7/d8n-dotnet-client-core/DocumentClient.cs#L7
 
+# Extract images
 
+<div style="display:flex; flex-direction:row;">
+<img src="./d8n-dotnet-example/test.jpg" width=200 height=200/>
+<img src="./d8n-dotnet-example/result.jpg" width=200 height=200/>
+</>
+
+```
+var symbolImage = await client.GetSymbols(result);
+symbolImage.Save("./data.png");
+```
