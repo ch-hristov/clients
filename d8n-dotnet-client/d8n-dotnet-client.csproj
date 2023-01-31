@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <PackageId>d8n-object-detection</PackageId>
+    <PackageId>d8n-object-detection-core</PackageId>
     <Version>0.0.1</Version>
     <Authors>d8n</Authors>
     <Company>d8n</Company>
