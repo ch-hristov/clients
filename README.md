@@ -46,3 +46,4 @@ Note: `result` is the id variable returned from RunAnalysis()
 
 # Limits
  Image size: 10MB
+ Limits to number of requests apply.
