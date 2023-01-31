@@ -45,5 +45,5 @@ symbolImage.Save("./line.png");
 Note: `result` is the id variable returned from RunAnalysis()
 
 # Limits
- Image size: 10MB
- Limits to number of requests apply.
+ 1. Image size: 10MB
+ 2. Limits to number of requests apply.
