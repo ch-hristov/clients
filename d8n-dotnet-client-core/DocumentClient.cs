@@ -95,7 +95,7 @@ public class DocumentClient
     /// Fetch symbol results for a request id
     /// </summary>
     /// <param name="id">The processing ID to use</param>
-    /// <returns>An list of symbol drawing object identified for the added id</returns>
+    /// <returns>An image of the identified symbols for the added id</returns>
     /// <exception cref="KeyNotFoundException">Couldn't find data for this ID</exception>
     /// <exception cref="NullReferenceException">The response was empty or wasn't as expected. The service might be down. Check status</exception>
     /// <exception cref="UnauthorizedAccessException">Check your API key</exception>
@@ -132,7 +132,7 @@ public class DocumentClient
     /// Fetch symbol results for a request id
     /// </summary>
     /// <param name="id">The processing ID to use</param>
-    /// <returns>An list of line drawing object identified for the added id</returns>
+    /// <returns>An image of the identified lines for the added id</returns>
     /// <exception cref="KeyNotFoundException">Couldn't find data for this ID</exception>
     /// <exception cref="NullReferenceException">The response was empty or wasn't as expected. The service might be down. Check status</exception>
     /// <exception cref="UnauthorizedAccessException">Check your API key</exception>
