@@ -13,12 +13,14 @@ using D8nObjectDetection;
 DocumentClient client = new DocumentClient("");
 var result = await client.RunAnalysis("./test.jpg");
 
+// Query for status once in a while (until status is equal to "Completed")
+var objects = await client.GetStatus(result);
+
 await Task.Delay(3000);
+// Returns the object coordinates. See
 var objects = await client.GetCompleted(result);
 ```
+Object now contains extracted info. For the full properties of what we can extract see this:
+ https://github.com/ch-hristov/d8n-dotnet-clients/blob/b11294a0fc588b00be9b20baef886e9de530faf7/d8n-dotnet-client-core/DocumentClient.cs#L7)
 
-You can query for status:
 
-```
-var objects = await client.GetStatus(result);
-```
