@@ -5,7 +5,7 @@ Docs: https://documenter.getpostman.com/view/989374/2s935hS7qK
 Nuget Package:
 [![NuGet version (d8n-object-detection-core)](https://img.shields.io/nuget/v/d8n-object-detection-core.svg?style=flat-square)](https://www.nuget.org/packages/d8n-object-detection-core/)
 
-# Basics
+# How to start
 
 ```
 using D8nObjectDetection;
