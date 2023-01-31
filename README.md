@@ -2,6 +2,8 @@
 
 Docs: https://documenter.getpostman.com/view/989374/2s935hS7qK
 
+This is a library for .NET core 7. Please note that the .NET Framework version is still in development.
+
 Nuget Package:
 [![NuGet version (d8n-object-detection-core)](https://img.shields.io/nuget/v/d8n-object-detection-core.svg?style=flat-square)](https://www.nuget.org/packages/d8n-object-detection-core/)
 
@@ -10,7 +12,7 @@ Nuget Package:
 ```
 using D8nObjectDetection;
 
-DocumentClient client = new DocumentClient("");
+DocumentClient client = new DocumentClient("YOUR-API-KEY");
 var result = await client.RunAnalysis("./test.jpg");
 
 // Query for status once in a while (until status is equal to "Completed")
