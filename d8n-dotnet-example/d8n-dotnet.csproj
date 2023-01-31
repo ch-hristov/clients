@@ -9,8 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="d8n-object-detection-core" Version="0.0.1" />
+    <PackageReference Include="d8n-object-detection-core" Version="0.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\d8n-dotnet-client-core\d8n-dotnet-client.csproj" />
+  </ItemGroup>
+  
 </Project>
