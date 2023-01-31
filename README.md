@@ -25,7 +25,7 @@ Object now contains extracted info. For the full properties of what we can extra
 
 # Extract images
 
-If you pass 1-st image to Analyse(), you can get the second and third images
+If you pass 1-st image to RunAnalysis(), you can get the second and third images
 <div style="display:flex; flex-direction:row;">
 <img src="./d8n-dotnet-example/test.jpg" width=200 height=200/>
 <img src="./d8n-dotnet-example/result.png" width=200 height=200/>
@@ -41,4 +41,4 @@ var lineImage = await client.GetLines(result);
 symbolImage.Save("./line.png");
  
 ```
-Note: `result` is the id variable returned from Analyse()
+Note: `result` is the id variable returned from RunAnalysis()
