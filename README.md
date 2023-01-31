@@ -21,6 +21,6 @@ await Task.Delay(3000);
 var objects = await client.GetCompleted(result);
 ```
 Object now contains extracted info. For the full properties of what we can extract see this:
- https://github.com/ch-hristov/d8n-dotnet-clients/blob/b11294a0fc588b00be9b20baef886e9de530faf7/d8n-dotnet-client-core/DocumentClient.cs#L7)
+ https://github.com/ch-hristov/d8n-dotnet-clients/blob/b11294a0fc588b00be9b20baef886e9de530faf7/d8n-dotnet-client-core/DocumentClient.cs#L7
 
 
