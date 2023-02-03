@@ -19,7 +19,8 @@ var result = await client.RunAnalysis("./test.jpg");
 var objects = await client.GetStatus(result);
 
 await Task.Delay(3000);
-// Returns the object coordinates. See
+// Returns the coordinates of the identified objects
+// This can be useful for further processing downstream
 var objects = await client.GetCompleted(result);
 ```
 Object now contains extracted info. For the full properties of what we can extract see this:
