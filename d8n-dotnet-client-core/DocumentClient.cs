@@ -102,7 +102,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<Image> GetSymbols(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/get_symbols?id={id}");
+        var client = new RestClient($"http://159.223.120.61:5000/api/get_symbols?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
