@@ -68,7 +68,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<string?> RunAnalysis(string filePath)
     {
-        var client = new RestClient("https://d8n.xyz/api/analysis");
+        var client = new RestClient("http://159.223.120.61:5000/api/analysis");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
@@ -139,7 +139,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<Image> GetLines(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/get_lines?id={id}");
+        var client = new RestClient($"http://159.223.120.61:5000/api/get_lines?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
@@ -175,7 +175,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<IEnumerable<DrawingObject>> GetCompleted(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/completed?id={id}");
+        var client = new RestClient($"http://159.223.120.61:5000//completed?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
@@ -213,7 +213,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong with the service</exception>
     public async Task<string> GetStatus(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/get_status?id={id}");
+        var client = new RestClient($"http://159.223.120.61:5000/get_status?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
