@@ -16,6 +16,10 @@ var objects = await client.GetCompleted(result);
 
 System.Console.WriteLine(objects.Count());
 
+foreach(var value in objects){
+    Console.WriteLine(value.Class + " " + value.X1 + " " + value.Y1); // etc. etc..
+}
+
 var symbolImage = await client.GetSymbols(result);
 symbolImage.Save("./result.png");
 

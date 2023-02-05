@@ -47,8 +47,6 @@ public class DrawingObject
     [JsonProperty("is_edge_node")]
     public bool IsEdge { get; set; }
 
-    [JsonProperty("text")]
-    public string Text { get; set; } = "";
 }
 public class DocumentClient
 {
