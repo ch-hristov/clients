@@ -1,7 +1,7 @@
 ﻿using D8nObjectDetection;
 using SixLabors.ImageSharp;
 
-string api_key = Environment.GetEnvironmentVariable("d8n_api_key");
+string api_key = "YOUR-API-KEY";
 
 DocumentClient client = new DocumentClient(api_key);
 var result = await client.RunAnalysis("./test.jpg");
