@@ -32,11 +32,6 @@ foreach(var value in objects){
     Console.WriteLine(value.Class + " " + value.X1 + " " + value.Y1); // etc. etc..
 }
 
-var symbolImage = await client.GetSymbols(result);
-symbolImage.Save("./result.png");
-
-var lineImage = await client.GetLines(result);
-lineImage.Save("./line.png");
 ```
 Object now contains extracted info. For the full properties of what we can extract see this:
  https://github.com/ch-hristov/d8n-dotnet-clients/blob/b11294a0fc588b00be9b20baef886e9de530faf7/d8n-dotnet-client-core/DocumentClient.cs#L7
@@ -51,14 +46,7 @@ If you pass 1-st image to RunAnalysis(), you can get the second and third images
 
 Here's how:
  
-```csharp
-var symbolImage = await client.GetSymbols(result);
-symbolImage.Save("./data.png");
- 
-var lineImage = await client.GetLines(result);
-symbolImage.Save("./line.png");
-```
-Note: `result` is the id variable returned from RunAnalysis()
+`Note: `result` is the id variable returned from RunAnalysis()
 
 # Limits
  1. Image size: 10MB
