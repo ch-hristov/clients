@@ -47,12 +47,11 @@ public class DrawingObject
     [JsonProperty("is_edge_node")]
     public bool IsEdge { get; set; }
 
-    [JsonProperty("text")]
-    public string Text { get; set; } = "";
 }
 public class DocumentClient
 {
     private string _apiKey = "";
+    private string url = "https://d8n.host/api";
     public DocumentClient(string apiKey)
     {
         if(string.IsNullOrEmpty(apiKey))
@@ -70,12 +69,12 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<string?> RunAnalysis(string filePath)
     {
-        var client = new RestClient("https://d8n.xyz/api/analysis");
+        var client = new RestClient($"{this.url}/analysis");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
         request.Method = Method.Post;
-        request.AddFile("file", filePath);
+        request.AddFile("file", filePath, "image/png");
 
         var response = await client.ExecuteAsync(request);
         if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -104,7 +103,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<Image> GetSymbols(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/get_symbols?id={id}");
+        var client = new RestClient($"{this.url}/get_symbols?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
@@ -141,7 +140,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<Image> GetLines(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/get_lines?id={id}");
+        var client = new RestClient($"{this.url}/get_lines?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
@@ -177,7 +176,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong.</exception>
     public async Task<IEnumerable<DrawingObject>> GetCompleted(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/completed?id={id}");
+        var client = new RestClient($"{this.url}/completed?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);
@@ -215,7 +214,7 @@ public class DocumentClient
     /// <exception cref="Exception">Something went wrong with the service</exception>
     public async Task<string> GetStatus(string id)
     {
-        var client = new RestClient($"https://d8n.xyz/api/get_status?id={id}");
+        var client = new RestClient($"{this.url}/get_status?id={id}");
         var request = new RestRequest();
 
         request.AddHeader("API-KEY", this._apiKey);

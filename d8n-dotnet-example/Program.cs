@@ -11,6 +11,7 @@ var result = await client.RunAnalysis("./test.jpg");
 var status = await client.GetStatus(result);
 System.Console.WriteLine(status);
 await Task.Delay(5000);
+
 status = await client.GetStatus(result);
 System.Console.WriteLine(status);
 
@@ -18,8 +19,12 @@ var objects = await client.GetCompleted(result);
 
 System.Console.WriteLine(objects.Count());
 
-var symbolImage = await client.GetSymbols(result);
-symbolImage.Save("./result.png");
+foreach(var value in objects){
+    Console.WriteLine(value.Class + " " + value.X1 + " " + value.Y1); // etc. etc..
+}
 
-var lineImage = await client.GetLines(result);
-lineImage.Save("./line.png");
+// var symbolImage = await client.GetSymbols(result);
+// symbolImage.Save("./result.png");
+
+// var lineImage = await client.GetLines(result);
+// lineImage.Save("./line.png");
