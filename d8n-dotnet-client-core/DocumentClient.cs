@@ -55,6 +55,8 @@ public class DocumentClient
     private string _apiKey = "";
     public DocumentClient(string apiKey)
     {
+        if(string.IsNullOrEmpty(apiKey))
+            throw new NullReferenceException("Missing api key");
         this._apiKey = apiKey;
     }
 
