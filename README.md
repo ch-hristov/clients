@@ -11,7 +11,6 @@ Nuget Package:
 
 ```csharp
 using D8nObjectDetection;
-using SixLabors.ImageSharp;
 
 string api_key = Environment.GetEnvironmentVariable("d8n_api_key");
 
