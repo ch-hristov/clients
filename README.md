@@ -48,5 +48,5 @@ Here's how:
 `Note: `result` is the id variable returned from RunAnalysis()
 
 # Limits
- 1. Image size: 10MB
+ 1. Image/PDF size: 10MB
  2. Limits to number of requests apply.
